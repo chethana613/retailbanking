@@ -1,0 +1,5 @@
+com\bank\retailbanking\RetailbankingApplicationTests.class
+com\bank\retailbanking\controller\AccountSummaryControllerTest.class
+com\bank\retailbanking\service\AccountSummaryServiceImplementationTest.class
+com\bank\retailbanking\controller\LoginControllerTest.class
+com\bank\retailbanking\service\LoginServiceImplementationTest.class

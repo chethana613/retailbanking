@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerTransactions.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">retailbanking</a> &gt; <a href="index.source.html" class="el_package">com.bank.retailbanking.entity</a> &gt; <span class="el_source">CustomerTransactions.java</span></div><h1>CustomerTransactions.java</h1><pre class="source lang-java linenums">package com.bank.retailbanking.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+<span class="fc" id="L19">@Setter</span>
+<span class="fc" id="L20">public class CustomerTransactions {</span>
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+<span class="nc" id="L23">	private Long transactionId;</span>
+<span class="fc" id="L24">	private String transactionType;</span>
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = &quot;accountNumber&quot;, nullable = false)
+<span class="nc" id="L28">	private CustomerAccountDetails accountNumber;</span>
+
+<span class="fc" id="L30">	private Double transactionAmount;</span>
+<span class="fc" id="L31">	private LocalDate transactionDate;</span>
+<span class="fc" id="L32">	private String transactionStatus;</span>
+<span class="fc" id="L33">	private String transactionComments;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>
